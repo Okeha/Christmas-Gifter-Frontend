@@ -1,6 +1,5 @@
 import { Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
-import axios from "axios";
 
 function ProductBox({ giftname, Description, Price }) {
   return (

@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import "./App.css";
 import { Button } from "@mui/material";
-import axios from "axios";
 import GiftCurator from "./components/GiftCurator.tsx";
+import axios from "axios";
 
 // Authenticate the user, and get permission to request payments from them:
-const scopes = ["username"];
+// const scopes = ["username"];
 
 // Read more about this callback in the SDK reference:
 // function onIncompletePaymentFound(payment) { /* ... */ };
