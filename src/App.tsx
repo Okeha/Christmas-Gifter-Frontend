@@ -28,7 +28,7 @@ function App() {
           username: auth.user.username,
         };
 
-        console.log({ userDetails, authDetails });
+        // console.log({ userDetails, authDetails });
 
         if (
           userDetails.uid === authDetails.uid &&
