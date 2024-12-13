@@ -50,7 +50,8 @@ function GiftCurator() {
 
     console.log(data);
 
-    const response = await fetch(`http://localhost:3002/api/v1/gifts`, {
+    const response = await fetch(`
+https://christmas-gifter-backend.onrender.com/api/v1/gifts`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
