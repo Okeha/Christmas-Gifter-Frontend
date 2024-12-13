@@ -16,7 +16,7 @@ function App() {
   const handleAuth = async () => {
     Pi.authenticate(["username"], () => {})
       .then(async (auth) => {
-        // console.log(auth)
+        console.log(auth)
         setUsername(auth.user.username);
         const me = await axios.get("https://api.minepi.com/v2/me", {
           headers: { Authorization: `Bearer ${auth.accessToken}` },
