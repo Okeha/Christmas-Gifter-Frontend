@@ -12,35 +12,35 @@ import axios from "axios";
 // function onIncompletePaymentFound(payment) { /* ... */ };
 
 function App() {
-  const [username, setUsername] = useState(null);
-  const handleAuth = async () => {
-    Pi.authenticate(["username"], () => {})
-      .then(async (auth) => {
-        console.log(auth)
-        setUsername(auth.user.username);
-        const me = await axios.get("https://api.minepi.com/v2/me", {
-          headers: { Authorization: `Bearer ${auth.accessToken}` },
-        });
+  // const [username, setUsername] = useState(null);
+  // const handleAuth = async () => {
+  //   Pi.authenticate(["username"], () => {})
+  //     .then(async (auth) => {
+  //       console.log(auth)
+  //       setUsername(auth.user.username);
+  //       const me = await axios.get("https://api.minepi.com/v2/me", {
+  //         headers: { Authorization: `Bearer ${auth.accessToken}` },
+  //       });
 
-        const userDetails = { uid: me.data.uid, username: me.data.username };
-        const authDetails = {
-          uid: auth.user.uid,
-          username: auth.user.username,
-        };
+  //       const userDetails = { uid: me.data.uid, username: me.data.username };
+  //       const authDetails = {
+  //         uid: auth.user.uid,
+  //         username: auth.user.username,
+  //       };
 
-        // console.log({ userDetails, authDetails });
+  //       // console.log({ userDetails, authDetails });
 
-        if (
-          userDetails.uid === authDetails.uid &&
-          userDetails.username === authDetails.username
-        ) {
-          alert("Successfully Authenticated User!");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  //       if (
+  //         userDetails.uid === authDetails.uid &&
+  //         userDetails.username === authDetails.username
+  //       ) {
+  //         alert("Successfully Authenticated User!");
+  //       }
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   return (
     <>
       <div
@@ -52,19 +52,19 @@ function App() {
       >
         <div>
         <h1>Test App</h1>
-        <Button variant="contained" onClick={handleAuth}>
+        {/* <Button variant="contained" onClick={handleAuth}>
           Authenticate
-        </Button>
+        </Button> */}
 
-        <div>
+        {/* <div>
           <h2>Hi {username}</h2>
-        </div>
+        </div> */}
 
         </div>
         
         
       </div>
-      {username && <GiftCurator />}
+       <GiftCurator />
     </>
   );
 }
